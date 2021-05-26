@@ -1,1 +1,6 @@
-{}
+{
+  "Api": {
+    "OK": "成功",
+    "INTERNAL_SERVER_ERROR": "內部服務器錯誤"
+  }
+}
