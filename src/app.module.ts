@@ -7,9 +7,10 @@ import { MailerModule } from './common/mailer/mailer.module';
 import { MongoModule } from './common/mongo/mongo.module';
 import { HttpExceptionFilter } from './providers/filters/http-exception.filter';
 import { ResponseInterceptor } from './providers/interceptors/response.interceptor';
+import { UsersModule } from './modules/users/users.module';
 
 @Module({
-  imports: [I18nModule, MongoModule, MailerModule],
+  imports: [I18nModule, MongoModule, MailerModule, UsersModule],
   controllers: [AppController],
   providers: [
     // Http 异常过滤器
