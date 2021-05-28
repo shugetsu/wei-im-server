@@ -1,6 +1,9 @@
 {
   "Api": {
     "OK": "成功",
-    "INTERNAL_SERVER_ERROR": "內部服務器錯誤"
+    "INTERNAL_SERVER_ERROR": "內部服務器錯誤",
+    "REGISTER_FAIL": "註冊失敗",
+    "EMAIL_REGISTERED": "郵箱已註冊",
+    "EMAIL_REGISTERED_UNVERIFIED": "郵箱已註冊，但未認證"
   }
 }

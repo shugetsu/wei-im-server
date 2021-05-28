@@ -62,7 +62,7 @@ export class User {
   /**
    * 用户角色
    */
-  @prop({ type: () => [UserRole], default: [UserRole.NORMAL_USER] })
+  @prop({ type: () => [Number], default: [UserRole.NORMAL_USER] })
   roles?: UserRole[];
 
   /**
@@ -77,6 +77,3 @@ export class User {
   @prop({ default: new Date() })
   registrationTime?: Date;
 }
-
-const user = new User();
-user.roles = [UserRole.ADMIN, UserRole.NORMAL_USER];

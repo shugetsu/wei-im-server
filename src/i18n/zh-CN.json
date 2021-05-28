@@ -1,6 +1,43 @@
 {
   "Api": {
     "OK": "成功",
-    "INTERNAL_SERVER_ERROR": "内部服务器错误"
+    "INTERNAL_SERVER_ERROR": "内部服务器错误",
+    "REGISTER_FAIL": "注册失败",
+    "EMAIL_REGISTERED": "邮箱已注册",
+    "EMAIL_REGISTERED_UNVERIFIED": "邮箱已注册，但未认证",
+    "LOGIN_FAIL_ACCOUNT_NOT_EXIST": "登录失败，账号不存在",
+    "LOGIN_FAIL_PASSWORD_ERROR": "登录失败，密码错误",
+    "LOGIN_FAIL_EMAIL_UNVERIFIED": "登录失败，邮箱未认证"
+  },
+  "Validation": {
+    "equals": "{property}必须等于{constraint1}",
+    "isDefined": "{property}不应为null或未定义",
+    "isEmpty": "{property}必须为空",
+    "isIn": "{property}必须为以下值之一:{constraint1}",
+    "isLatitude": "{property}必须是纬度字符串或数字",
+    "isLatLong": "{property}必须是纬度,经度字符串",
+    "isLongitude": "{property}必须是经度字符串或数字",
+    "isNotEmpty": "{property}不能为空",
+    "isNotIn": "{property}不应为以下值之一:{constraint1}",
+    "notEquals": "{property}不应该等于{constraint1}",
+    "maxDate": "{property}的最大允许日期为{constraint1}",
+    "minDate": "{property}的最短允许日期为{constraint1}",
+    "max": "{property}不得大于{constraint1}",
+    "min": "{property}不得小于{constraint1}",
+    "isNotEmptyObject": "{property}必须是非空对象",
+    "contains": "{property}必须包含一个{constraint1}字符串",
+    "isDataURI": "{property}必须是数据uri格式",
+    "isDateString": "{property}必须是有效的ISO 8601日期字符串",
+    "isEmail": "{property}必须是电子邮件",
+    "isIP": "{property}必须是一个IP地址",
+    "isJSON": "{property}必须是json字符串",
+    "isJWT": "{property}必须为jwt字符串",
+    "isMobilePhone": "{property}必须是电话号码",
+    "maxLength": "{property}必须小于或等于{constraint1}个字符",
+    "minLength": "{property}必须长于或等于{constraint1}个字符",
+    "isInt": "{property}必须为整数",
+    "isLength": "{property}必须大于或等于{constraint1}，小于或等于{constraint2}",
+    "isAlphaDash": "{property}只能包含字母，数字，破折号或下划线",
+    "isDate": "{property}必须是一个Date实例"
   }
 }

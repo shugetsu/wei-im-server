@@ -1,6 +1,9 @@
 {
   "Api": {
     "OK": "success",
-    "INTERNAL_SERVER_ERROR": "internal server error"
+    "INTERNAL_SERVER_ERROR": "internal server error",
+    "REGISTER_FAIL": "registration failed",
+    "EMAIL_REGISTERED": "Email has been registered",
+    "EMAIL_REGISTERED_UNVERIFIED": "Email has been registered, but not verified"
   }
 }
