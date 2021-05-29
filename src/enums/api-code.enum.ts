@@ -10,6 +10,26 @@ export enum ApiCode {
   INTERNAL_SERVER_ERROR = 500,
 
   /**
+   * 未授权
+   */
+  UNAUTHORIZED = 401,
+
+  /**
+   * 令牌无效
+   */
+  TOKEN_INVALID = 402,
+
+  /**
+   * 令牌已过期
+   */
+  TOKEN_EXPIRED = 403,
+
+  /**
+   * 鉴权失败
+   */
+  AUTHENTICATION_FAIL = 405,
+
+  /**
    * 参数错误
    */
   PARAMETER_ERROR = 400,
@@ -43,4 +63,14 @@ export enum ApiCode {
    * 登录失败，邮箱未认证
    */
   LOGIN_FAIL_EMAIL_UNVERIFIED = 10005,
+
+  /**
+   * 登录失败，缓存异常
+   */
+  LOGIN_FAIL_CACHE_EXCEPTION = 10006,
+
+  /**
+   * 用户不存在
+   */
+  USER_NOT_EXIST = 10008,
 }

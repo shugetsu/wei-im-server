@@ -1,11 +1,8 @@
-import { IsIn as _IsIn, ValidationOptions } from 'class-validator';
+import { Max as _Max, ValidationOptions } from 'class-validator';
 
-export function IsIn(
-  values: readonly any[],
-  validationOptions?: ValidationOptions,
-) {
-  return _IsIn(
-    values,
+export function Max(max: number, validationOptions?: ValidationOptions) {
+  return _Max(
+    max,
     Object.assign(
       {
         message: JSON.stringify({

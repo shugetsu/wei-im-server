@@ -1,6 +1,8 @@
 import { ApiProperty } from '@nestjs/swagger';
+import { Device } from 'src/enums/device.enum';
 import { IsAlphaDash } from 'src/providers/decorators/is-alpha-dash.decorator';
 import { IsEmail } from 'src/providers/decorators/is-email.decorator';
+import { IsIn } from 'src/providers/decorators/is-in.decorator';
 import { IsNotEmpty } from 'src/providers/decorators/is-not-empty.decorator';
 import { MaxLength } from 'src/providers/decorators/max-length.decorator';
 import { MinLength } from 'src/providers/decorators/min-length.decorator';
@@ -18,4 +20,12 @@ export class LoginDto implements Pick<User, 'email' | 'password'> {
   @IsNotEmpty()
   @ApiProperty({ description: '密码', default: '123456' })
   password: string;
+
+  @IsIn([Device.ANDROID, Device.IOS, Device.MAC, Device.WEB, Device.WINDOW])
+  @IsNotEmpty()
+  @ApiProperty({
+    description: '设备',
+    enum: Device,
+  })
+  device: Device;
 }

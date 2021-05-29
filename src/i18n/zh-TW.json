@@ -4,6 +4,29 @@
     "INTERNAL_SERVER_ERROR": "內部服務器錯誤",
     "REGISTER_FAIL": "註冊失敗",
     "EMAIL_REGISTERED": "郵箱已註冊",
-    "EMAIL_REGISTERED_UNVERIFIED": "郵箱已註冊，但未認證"
+    "EMAIL_REGISTERED_UNVERIFIED": "郵箱已註冊，但未認證",
+    "USER_NOT_EXIST": "用戶不存在",
+    "TOKEN_EXPIRED": "令牌已過期",
+    "LOGIN_FAIL_CACHE_EXCEPTION": "登錄失敗，緩存異常",
+    "AUTHENTICATION_FAIL": "鑑權失敗",
+    "LOGIN_FAIL_ACCOUNT_NOT_EXIST": "登錄失敗，賬號不存在",
+    "LOGIN_FAIL_EMAIL_UNVERIFIED": "登錄失敗，郵箱未認證",
+    "LOGIN_FAIL_PASSWORD_ERROR": "登錄失敗，密碼錯誤",
+    "TOKEN_INVALID": "令牌無效",
+    "UNAUTHORIZED": "未授權"
+  },
+  "Validation": {
+    "contains": "{property}必須包含一個{constraint1}字符串",
+    "isAlphaDash": "{property}只能包含字母，數字，破折號或下劃線",
+    "isDateString": "{property}必須是有效的ISO 8601日期字符串",
+    "isEmail": "{property}必須是電子郵件",
+    "isIn": "{property}必須為以下值之一:{constraint1}",
+    "isInt": "{property}必須為整數",
+    "isLength": "{property}必須大於或等於{constraint1}，小於或等於{constraint2}",
+    "isNotEmpty": "{property}不能為空",
+    "max": "{property}不得大於{constraint1}",
+    "maxLength": "{property}必須小於或等於{constraint1}個字符",
+    "min": "{property}不得小於{constraint1}",
+    "minLength": "{property}必須長於或等於{constraint1}個字符"
   }
 }

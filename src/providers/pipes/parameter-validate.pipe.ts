@@ -7,10 +7,6 @@ import {
 import { plainToClass } from 'class-transformer';
 import { ApiCode } from 'src/enums/api-code.enum';
 import { ParameterException } from 'src/common/exception/parameter-exception';
-import {
-  I18nParameterMsg,
-  I18nParameterMsgs,
-} from 'src/common/exception/base-exception';
 import { validate } from 'class-validator';
 
 /**
@@ -27,41 +23,10 @@ export class ParameterValidationPipe implements PipeTransform<any> {
     const errors = await validate(object);
 
     if (errors.length > 0) {
-      const msgs: I18nParameterMsgs = [];
-      errors.forEach((e) => {
-        const errItem: I18nParameterMsg = {
-          field: e.property,
-          messages: [],
-        };
-        for (const key in e.constraints) {
-          errItem.messages.push({
-            i18nKey: `Validation.${key}`,
-            args: JSON.parse(e.constraints[key]),
-          });
-        }
-        msgs.push(errItem);
-      });
-      // console.log(msgs);
-      // errors.forEach((err) => {
-      //   msgs[err.property] = Object.values(err.constraints);
-      // });
-      // console.log(msgs);
-      // console.log(errors);
-      // console.log(errors);
-      // for (let i = 0; i < errors.length; i++) {
-      //   const err = errors[i];
-      // }
-      // console.log(errors);
-      // console.log(errors);
-      // const msgs: I18nParameterMsgs = [];
-      // for (let i = 0; i < errors.length; i++) {
-      //   const err = errors[i];
-      //   msgs.push(this.createParameterErrorItem(err.property, err.constraints));
-      // }
       throw new ParameterException({
         status: HttpStatus.BAD_REQUEST,
         code: ApiCode.PARAMETER_ERROR,
-        msg: msgs,
+        msg: errors.map((e) => this.formatError(e.property, e.constraints)),
       });
     }
 
@@ -76,45 +41,18 @@ export class ParameterValidationPipe implements PipeTransform<any> {
   }
 
   /**
-   * 创建参数错误项
+   * 格式化错误
    * @param field
    * @param constraints
    */
-  private createParameterErrorItem(
-    field: string,
-    constraints: Record<string, string>,
-  ) {
+  private formatError(field: string, constraints: Record<string, string>) {
     const messages = [];
-    for (const rule in constraints) {
+    for (const key in constraints) {
       messages.push({
-        i18nKey: `Validation.${rule}`,
-        args: this.getRuleArgs(field, constraints[rule]),
+        i18nKey: `Validation.${key}`,
+        args: JSON.parse(constraints[key]),
       });
     }
     return { field, messages };
-  }
-
-  /**
-   * 获取占位值
-   * @param property
-   * @param constraints
-   */
-  private getRuleArgs(property: string, constraints: string) {
-    let constraintArr;
-
-    try {
-      constraintArr = JSON.parse(constraints);
-    } catch (err) {
-      constraintArr = [];
-    }
-
-    const args = constraintArr.reduce(
-      (args, value, i) => {
-        args[`constraint${i + 1}`] = value;
-        return args;
-      },
-      { property },
-    );
-    return args;
   }
 }

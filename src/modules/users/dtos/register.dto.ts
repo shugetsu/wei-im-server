@@ -6,7 +6,6 @@ import { IsEmail } from 'src/providers/decorators/is-email.decorator';
 import { IsIn } from 'src/providers/decorators/is-in.decorator';
 import { IsNotEmpty } from 'src/providers/decorators/is-not-empty.decorator';
 import { IsOptional } from 'src/providers/decorators/is-optional.decorator';
-import { IsString } from 'src/providers/decorators/is-string.decorator';
 import { MaxLength } from 'src/providers/decorators/max-length.decorator';
 import { MinLength } from 'src/providers/decorators/min-length.decorator';
 import { User } from '../user.model';
@@ -56,7 +55,6 @@ export class RegisterDto
   })
   gender?: UserGender;
 
-  @IsString()
   @IsNotEmpty()
   @ApiProperty({ description: '头像' })
   avatar: string;

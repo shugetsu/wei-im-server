@@ -1,11 +1,8 @@
-import { IsIn as _IsIn, ValidationOptions } from 'class-validator';
+import { Contains as _Contains, ValidationOptions } from 'class-validator';
 
-export function IsIn(
-  values: readonly any[],
-  validationOptions?: ValidationOptions,
-) {
-  return _IsIn(
-    values,
+export function Contains(seed: string, validationOptions?: ValidationOptions) {
+  return _Contains(
+    seed,
     Object.assign(
       {
         message: JSON.stringify({

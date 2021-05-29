@@ -4,6 +4,29 @@
     "INTERNAL_SERVER_ERROR": "internal server error",
     "REGISTER_FAIL": "registration failed",
     "EMAIL_REGISTERED": "Email has been registered",
-    "EMAIL_REGISTERED_UNVERIFIED": "Email has been registered, but not verified"
+    "EMAIL_REGISTERED_UNVERIFIED": "Email has been registered, but not verified",
+    "USER_NOT_EXIST": "User does not exist",
+    "TOKEN_EXPIRED": "Token has expired",
+    "LOGIN_FAIL_CACHE_EXCEPTION": "Login failed, cache exception",
+    "AUTHENTICATION_FAIL": "Authentication failed",
+    "LOGIN_FAIL_ACCOUNT_NOT_EXIST": "Login failed, account does not exist",
+    "LOGIN_FAIL_EMAIL_UNVERIFIED": "Login failed, email is not authenticated",
+    "LOGIN_FAIL_PASSWORD_ERROR": "Login failed password",
+    "TOKEN_INVALID": "Invalid token",
+    "UNAUTHORIZED": "unauthorized"
+  },
+  "Validation": {
+    "contains": "{property} must contain a {constraint1} string",
+    "isAlphaDash": "{property} can only contain letters, numbers, dashes or underscores",
+    "isDateString": "{property} must be a valid ISO 8601 date string",
+    "isEmail": "{property} must be an email",
+    "isIn": "{property} must be one of the following values: {constraint1}",
+    "isInt": "{property} must be an integer",
+    "isLength": "{property} must be greater than or equal to {constraint1} and less than or equal to {constraint2}",
+    "isNotEmpty": "{property} cannot be empty",
+    "max": "{property} must not be greater than {constraint1}",
+    "maxLength": "{property} must be less than or equal to {constraint1} characters",
+    "min": "{property} must not be less than {constraint1}",
+    "minLength": "{property} must be longer than or equal to {constraint1} characters"
   }
 }

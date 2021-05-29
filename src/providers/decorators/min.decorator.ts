@@ -1,11 +1,8 @@
-import { IsIn as _IsIn, ValidationOptions } from 'class-validator';
+import { Min as _Min, ValidationOptions } from 'class-validator';
 
-export function IsIn(
-  values: readonly any[],
-  validationOptions?: ValidationOptions,
-) {
-  return _IsIn(
-    values,
+export function Min(min: number, validationOptions?: ValidationOptions) {
+  return _Min(
+    min,
     Object.assign(
       {
         message: JSON.stringify({

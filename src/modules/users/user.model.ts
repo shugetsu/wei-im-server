@@ -5,6 +5,8 @@ import { UserStatus } from 'src/enums/user-status.enum';
 import { UserType } from 'src/enums/user-type.enum';
 
 export class User {
+  id?: string;
+
   /**
    * 邮箱
    */
@@ -14,7 +16,7 @@ export class User {
   /**
    * 密码
    */
-  @prop({ required: true })
+  @prop({ required: true, select: false })
   password: string;
 
   /**
