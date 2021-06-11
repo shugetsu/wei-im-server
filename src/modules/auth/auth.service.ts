@@ -1,7 +1,7 @@
 import { CACHE_MANAGER, Inject, Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { Cache } from 'cache-manager';
-import { JwtConfig } from 'src/config/jwt.config';
+import { RedisConfig } from 'src/config/redis.config';
 import { Device } from 'src/enums/device.enum';
 
 export interface TokenPayload {
@@ -77,7 +77,7 @@ export class AuthService {
    * @param device
    */
   getTokenCacheTTL(device: Device) {
-    const hour = JwtConfig.token.ttl[device] || 0;
+    const hour = RedisConfig.token.ttl[device] || 0;
     const ttl = hour * 24 * 60 * 60;
     return ttl;
   }

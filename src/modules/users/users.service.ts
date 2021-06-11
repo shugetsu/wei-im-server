@@ -10,12 +10,17 @@ import { LoginDto } from './dtos/login.dto';
 import * as crypto from 'crypto';
 import { AuthService } from '../auth/auth.service';
 import { Cache } from 'cache-manager';
+import { I18nRequestScopeService } from 'nestjs-i18n';
+import { MailService } from '../mail/mail.service';
+import e from 'express';
 
 @Injectable()
 export class UsersService {
   constructor(
     @InjectModel(User) private readonly userModel: ModelType<User>,
     private readonly authService: AuthService,
+    private readonly mailService: MailService,
+    private readonly i18n: I18nRequestScopeService,
     @Inject(CACHE_MANAGER) private readonly cacheManager: Cache,
   ) {}
 
@@ -199,5 +204,37 @@ export class UsersService {
       });
     }
     return result;
+  }
+
+  async validateEmail(activateCode: string) {
+    //   const passResult = {
+    //     pageTitle: await this.i18n.t('Mail.validateEmailPageTitle'),
+    //     title: await this.i18n.t('Mail.validateEmailPass.title'),
+    //     tip: await this.i18n.t('Mail.validateEmailPass.tip'),
+    //   };
+    //   const notPassResult = {
+    //     pageTitle: await this.i18n.t('Mail.validateEmailPageTitle'),
+    //     title: await this.i18n.t('Mail.validateEmailNotPass.title'),
+    //     tip: await this.i18n.t('Mail.validateEmailNotPass.tip'),
+    //   };
+    //   const email = this.mailService.verifyActivateCode(activateCode);
+    //   if (!email) {
+    //     return notPassResult;
+    //   }
+    //   const user = await this.userModel.findOne({ email });
+    //   if (!user) {
+    //     // 用户不存在
+    //     return notPassResult;
+    //   }
+    //   if (user.isAuthEmail) {
+    //     // 邮箱已认证
+    //     return passResult;
+    //   }
+    //   const result = await this.userModel.updateOne({ email, isAuthEmail: true });
+    //   if (!result) {
+    //     // 认证失败
+    //     return notPassResult;
+    //   }
+    //   return passResult;
   }
 }

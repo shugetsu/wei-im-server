@@ -73,4 +73,19 @@ export enum ApiCode {
    * 用户不存在
    */
   USER_NOT_EXIST = 10008,
+
+  /**
+   * 激活邮件发送失败，对方拒收
+   */
+  ACTIVATE_MAIL_SEND_FAIL_REJECTED = 10009,
+
+  /**
+   * 无法发送激活邮件，邮箱未注册
+   */
+  UNABLE_SEND_ACTIVATE_MAIL_EMAIL_NOT_REGISTERED = 10010,
+
+  /**
+   * 无法发送激活邮件，邮箱已认证
+   */
+  UNABLE_SEND_ACTIVATE_AUTHENTICATED = 10011,
 }

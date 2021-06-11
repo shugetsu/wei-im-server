@@ -1,7 +1,7 @@
 import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import { Exception } from 'src/common/exception/exception';
-import { JwtConfig } from 'src/config/jwt.config';
+import { RedisConfig } from 'src/config/redis.config';
 import { ApiCode } from 'src/enums/api-code.enum';
 import { UserRole } from 'src/enums/user-role.enum';
 import { UsersService } from 'src/modules/users/users.service';
@@ -28,7 +28,7 @@ export class RolesGuard implements CanActivate {
     }
 
     const { headers } = context.switchToHttp().getRequest();
-    const tokenField = JwtConfig.token.resolverField;
+    const tokenField = RedisConfig.token.resolverField;
     const token = (headers[tokenField] || '').replace('Bearer ', '');
 
     if (!token) {

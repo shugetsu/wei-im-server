@@ -1,8 +1,7 @@
 import { ExecutionContext, HttpStatus, Injectable } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
-import { BaseException } from 'src/common/exception/base-exception';
 import { Exception } from 'src/common/exception/exception';
-import { JwtConfig } from 'src/config/jwt.config';
+import { RedisConfig } from 'src/config/redis.config';
 import { ApiCode } from 'src/enums/api-code.enum';
 import { AuthService } from '../auth.service';
 
@@ -15,7 +14,7 @@ export class JwtAuthGuard extends AuthGuard('jwt') {
   async canActivate(context: ExecutionContext): Promise<boolean> {
     const rpc = context.switchToRpc();
     const data = rpc.getData();
-    const tokenField = JwtConfig.token.resolverField;
+    const tokenField = RedisConfig.token.resolverField;
     const token = (data.headers[tokenField] || '').replace('Bearer ', '');
 
     if (!token) {

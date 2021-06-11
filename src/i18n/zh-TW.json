@@ -13,7 +13,9 @@
     "LOGIN_FAIL_EMAIL_UNVERIFIED": "登錄失敗，郵箱未認證",
     "LOGIN_FAIL_PASSWORD_ERROR": "登錄失敗，密碼錯誤",
     "TOKEN_INVALID": "令牌無效",
-    "UNAUTHORIZED": "未授權"
+    "UNAUTHORIZED": "未授權",
+    "SEMD_ACTIVATE_MAIL_FAIL": "發送激活郵件失敗",
+    "ACTIVATE_MAIL_SEND_FAIL_REJECTED": "激活郵件發送失敗，對方拒收"
   },
   "Validation": {
     "contains": "{property}必須包含一個{constraint1}字符串",

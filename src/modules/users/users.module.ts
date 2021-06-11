@@ -6,6 +6,7 @@ import { User } from './user.model';
 import { UsersController } from './users.controller';
 import { UsersService } from './users.service';
 import * as redisStore from 'cache-manager-redis-store';
+import { MailModule } from '../mail/mail.module';
 
 @Module({
   imports: [
@@ -14,9 +15,10 @@ import * as redisStore from 'cache-manager-redis-store';
       store: redisStore,
       host: RedisConfig.host,
       port: RedisConfig.port,
-      db: RedisConfig.userDB,
+      db: RedisConfig.user.dbName,
     }),
     AuthModule,
+    MailModule,
   ],
   controllers: [UsersController],
   providers: [UsersService],

@@ -13,7 +13,10 @@
     "TOKEN_INVALID": "令牌无效",
     "TOKEN_EXPIRED": "令牌已过期",
     "LOGIN_FAIL_CACHE_EXCEPTION": "登录失败，缓存异常",
-    "AUTHENTICATION_FAIL": "鉴权失败"
+    "AUTHENTICATION_FAIL": "鉴权失败",
+    "ACTIVATE_MAIL_SEND_FAIL_REJECTED": "激活邮件发送失败，对方拒收",
+    "UNABLE_SEND_ACTIVATE_MAIL_EMAIL_NOT_REGISTERED": "无法发送激活邮件，邮箱未注册",
+    "UNABLE_SEND_ACTIVATE_AUTHENTICATED": "无法发送激活邮件，邮箱已认证"
   },
   "Validation": {
     "isIn": "{property}必须为以下值之一:{constraint1}",
@@ -28,5 +31,25 @@
     "isInt": "{property}必须为整数",
     "isLength": "{property}必须大于或等于{constraint1}，小于或等于{constraint2}",
     "isAlphaDash": "{property}只能包含字母，数字，破折号或下划线"
+  },
+  "Mail": {
+    "validateEmail": {
+      "subject": "您的 Wei IM 帐户：电子邮件地址验证",
+      "hello": "你好！",
+      "safety": "为了保证您的 Wei IM 帐户的安全，请在{number}小时内验证您的电子邮件地址。",
+      "clickActivate": "点击此处来验证您的电子邮件地址。",
+      "whyVerify": "验证您的电子邮件地址让您能够：在您忘记密码时，找回您的 Wei IM 帐户。",
+      "unregistered": "若如果您未尝试在本平台注册账号，请忽略本邮件，由此给您带来的不便请谅解。",
+      "team": "Wei IM 团队"
+    },
+    "validateEmailPageTitle": "电子邮件验证",
+    "validateEmailPass": {
+      "title": "电子邮件已验证",
+      "tip": "感谢您验证用于 Wei IM 的电子邮件地址。"
+    },
+    "validateEmailNotPass": {
+      "title": "无法验证电子邮件地址",
+      "tip": "验证您的电子邮件地址时出现问题。"
+    }
   }
 }

@@ -4,10 +4,11 @@ import {
   Get,
   Post,
   Query,
+  Render,
   UseGuards,
   UsePipes,
 } from '@nestjs/common';
-import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import { ApiExcludeEndpoint, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { UserRole } from 'src/enums/user-role.enum';
 import { ApiHeaderLang } from 'src/providers/decorators/api-header-lang.decorator';
 import { ApiHeaderToken } from 'src/providers/decorators/api-header-token.decorator';
@@ -74,5 +75,15 @@ export class UsersController {
   @ApiOperation({ summary: '根据邮箱获取用户' })
   async getUserByEmail(@Query('email') email: string) {
     return await this.usersService.getUserByEmail(email);
+  }
+
+  /**
+   * 验证邮箱
+   */
+  @Get('validateEmail')
+  @Render('validate-email')
+  @ApiExcludeEndpoint()
+  async validateEmail(@Query('activateCode') activateCode: string) {
+    return this.usersService.validateEmail(activateCode);
   }
 }

@@ -1,9 +1,9 @@
 import { ApiHeader } from '@nestjs/swagger';
-import { JwtConfig } from 'src/config/jwt.config';
+import { RedisConfig } from 'src/config/redis.config';
 
 export function ApiHeaderToken(): MethodDecorator {
   return ApiHeader({
-    name: JwtConfig.token.resolverField,
+    name: RedisConfig.token.resolverField,
     required: true,
     schema: {
       description: '令牌',

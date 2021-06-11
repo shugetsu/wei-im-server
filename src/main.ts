@@ -3,9 +3,12 @@ import { AppModule } from './app.module';
 import { SwaggerConfig } from './config/swagger.config';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import * as chalk from 'chalk';
+import { IoAdapter } from '@nestjs/platform-socket.io';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+
+  app.useWebSocketAdapter(new IoAdapter(app));
 
   // Swagger
   if (SwaggerConfig.enable) {

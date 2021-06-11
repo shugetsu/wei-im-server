@@ -9,13 +9,28 @@ export const RedisConfig = {
    */
   port: 6379,
 
-  /**
-   * Token DB
-   */
-  tokenDB: 0,
+  token: {
+    dbName: 0,
+    resolverField: 'token',
+    secret: 'WeiIM@2021@Token',
+    ttl: {
+      ios: 7,
+      android: 7,
+      web: 1,
+      window: 7,
+      mac: 7,
+    },
+  },
 
-  /**
-   * User Info
-   */
-  userDB: 1,
+  user: {
+    dbName: 1,
+    ttl: 0,
+  },
+
+  mail: {
+    dbName: 2,
+    secret: 'WeiIM@2021@Mail',
+    activateMailTTL: 24,
+    validateEmailUrl: ' http://localhost:3001/users/validate-email',
+  },
 };

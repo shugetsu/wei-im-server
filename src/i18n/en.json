@@ -13,7 +13,10 @@
     "LOGIN_FAIL_EMAIL_UNVERIFIED": "Login failed, email is not authenticated",
     "LOGIN_FAIL_PASSWORD_ERROR": "Login failed password",
     "TOKEN_INVALID": "Invalid token",
-    "UNAUTHORIZED": "unauthorized"
+    "UNAUTHORIZED": "unauthorized",
+    "SEMD_ACTIVATE_MAIL_FAIL": "Failed to send activation email",
+    "UNABLE_SEND_ACTIVATE_MAIL_EMAIL_NOT_REGISTERED": "Unable to send activation email, email is not registered",
+    "ACTIVATE_MAIL_SEND_FAIL_REJECTED": "The activation email failed to be sent and the other party rejected it"
   },
   "Validation": {
     "contains": "{property} must contain a {constraint1} string",

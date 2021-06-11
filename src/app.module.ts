@@ -11,9 +11,19 @@ import { UsersModule } from './modules/users/users.module';
 import { ParameterValidationPipe } from './providers/pipes/parameter-validate.pipe';
 import { AuthModule } from './modules/auth/auth.module';
 import { RolesGuard } from './modules/auth/guards/roles.guard';
+import { MailModule } from './modules/mail/mail.module';
+import { ImModule } from './modules/im/im.module';
 
 @Module({
-  imports: [I18nModule, MongoModule, MailerModule, AuthModule, UsersModule],
+  imports: [
+    I18nModule,
+    MongoModule,
+    MailerModule,
+    AuthModule,
+    UsersModule,
+    MailModule,
+    ImModule,
+  ],
   controllers: [AppController],
   providers: [
     // Http 异常过滤器
